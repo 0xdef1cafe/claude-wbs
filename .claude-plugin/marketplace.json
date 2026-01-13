@@ -9,10 +9,7 @@
       "name": "wbs",
       "description": "Work Breakdown Structure for project planning - hierarchical task decomposition with markdown persistence",
       "version": "1.0.0",
-      "source": {
-        "type": "local",
-        "path": "."
-      }
+      "source": "./"
     }
   ]
 }
