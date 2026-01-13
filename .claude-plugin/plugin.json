@@ -1,0 +1,11 @@
+{
+  "name": "wbs",
+  "version": "1.0.0",
+  "description": "Work Breakdown Structure for project planning - hierarchical task decomposition with markdown persistence",
+  "author": {
+    "name": "0xdef1cafe"
+  },
+  "repository": "https://github.com/0xdef1cafe/wbs",
+  "license": "MIT",
+  "keywords": ["wbs", "project-management", "planning", "tasks"]
+}
