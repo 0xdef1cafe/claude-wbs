@@ -13,7 +13,7 @@ A Claude Code plugin for hierarchical task decomposition using markdown files. E
 
 ```bash
 # From GitHub
-/plugin marketplace add 0xdef1cafe/wbs
+/plugin marketplace add 0xdef1cafe/claude-wbs
 /plugin install wbs
 
 # Or local development
