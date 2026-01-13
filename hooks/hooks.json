@@ -1,0 +1,9 @@
+{
+  "hooks": [
+    {
+      "event": "Stop",
+      "command": ["echo", "Remember to update wbs/ State sections before ending your session"],
+      "condition": "glob:wbs/**/*.md"
+    }
+  ]
+}

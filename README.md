@@ -12,13 +12,17 @@ A Claude Code plugin for hierarchical task decomposition using markdown files. E
 ## Installation
 
 ```bash
-# From GitHub
+# Add the marketplace (one-time)
 /plugin marketplace add 0xdef1cafe/claude-wbs
-/plugin install wbs
 
-# Or local development
+# Install the plugin
+/plugin install wbs@claude-wbs
+
+# Or for local development
 claude --plugin-dir /path/to/wbs
 ```
+
+After installation, the WBS commands and agents will be available in any project.
 
 ## Commands
 
@@ -112,6 +116,36 @@ Next: What to pick up
 - **Links** - `→ [[path/]]` for breakouts, `[[../wbs.md]]` for parent
 - **Verification** - `run:` prefix for automated checks
 - **Session discipline** - Always update State before ending session
+
+## Agents
+
+The plugin includes specialized agents:
+
+| Agent | Description |
+|-------|-------------|
+| `wbs-planner` | Helps decompose projects into MECE hierarchies |
+| `wbs-reviewer` | Audits WBS structure for completeness and quality |
+
+Claude will automatically invoke these agents when appropriate, or you can request them directly.
+
+## Troubleshooting
+
+**Plugin not found after install:**
+```bash
+# Verify marketplace is added
+/plugin marketplace list
+
+# Reinstall
+/plugin install wbs@claude-wbs
+```
+
+**Commands not recognized:**
+- Ensure you're in a Claude Code session (not the API)
+- Check plugin is installed: `/plugin list`
+
+**WBS not detected:**
+- The skill activates when a `wbs/` folder exists in the repo
+- Run `/wbs-init` to create the initial structure
 
 ## Full Documentation
 

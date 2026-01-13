@@ -1,6 +1,7 @@
 ---
 name: wbs
 description: Work Breakdown Structure for project planning and execution. Use when working in a repo with a wbs/ folder, when asked to plan work, show project status, or work on tasks. Enables structured task decomposition, progress tracking, and context resumption for long-running work.
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 # Work Breakdown Structure (WBS)
