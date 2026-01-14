@@ -33,6 +33,10 @@ Parent: [[../wbs.md]]
 Status: not-started | in-progress | done | blocked
 Objective: <what "done" looks like for this subtree>
 
+## Plan
+
+<implementation approach - key files, design decisions, dependencies>
+
 ## Verification
 
 - [ ] <testable criterion - automated where possible>

@@ -38,6 +38,10 @@ Parent: [[../wbs.md]]
 Status: not-started | in-progress | done | blocked
 Objective: <what "done" looks like for this subtree>
 
+## Plan
+
+<implementation approach - key files, design decisions, dependencies>
+
 ## Verification
 
 - [ ] <testable criterion - automated where possible>
@@ -88,20 +92,29 @@ The `run:` prefix indicates an executable command or glob pattern. Claude should
 
 1. Update Status to `in-progress`
 2. If task lacks clarity, prompt user for clarification before proceeding
-3. Do the work
-4. Update State section as you progress (overwrite, don't append)
-5. When complete, **execute all verification**:
+3. For non-trivial tasks, enter plan mode to get user approval:
+   a. Call `EnterPlanMode`
+   b. Explore codebase, understand requirements
+   c. Write implementation plan to ## Plan section in the task's wbs.md:
+      - Key files to modify
+      - Design decisions and rationale
+      - External dependencies or APIs
+      - Edge cases to handle
+   d. Call `ExitPlanMode` to get user approval before proceeding
+4. Do the work
+5. Update State section as you progress (overwrite, don't append)
+6. When complete, **execute all verification**:
    - Run each `run:` item and record pass/fail
    - Check manual items with user if needed
    - **All must pass to mark done**
-6. If all verification passes:
+7. If all verification passes:
    - Mark task done: `- [x] ~~Task name~~ (a1b2c3d: outcome)`
    - Update Status to `done`
-7. If verification partially passes:
+8. If verification partially passes:
    - Status stays `in-progress`
    - Update State with what passed/failed
    - Do not shortcut to done - fix failures first
-8. Commit changes including wbs.md updates
+9. Commit changes including wbs.md updates
 
 ## Breaking Out a Task
 
@@ -111,7 +124,11 @@ When a leaf task needs decomposition:
 2. Create folder `{N}-{slug}/`
 3. Create `{N}-{slug}/wbs.md` using template
 4. Replace leaf line with: `- [ ] Task name → [[{N}-{slug}/]]`
-5. Populate new wbs.md with user or derive from context
+5. Populate new wbs.md:
+   - Objective: what "done" looks like
+   - Plan: implementation approach (key files, dependencies, design decisions)
+   - Verification: testable criteria
+   - Tasks: sub-items
 
 ## Blocked Tasks
 
